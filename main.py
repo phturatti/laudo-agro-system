@@ -5,21 +5,17 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    if request.method == 'POST':
-        paciente = request.form['paciente']
-        produto = request.form['produto']
-        dose = request.form['dose']
-        return f'Laudo para {paciente}, {produto}, {dose} mg/dia'
-    return render_template('index.html')  # Certifique-se de que o arquivo index.html está no diretório 'templates'
+    return render_template('index.html')  # Formulário inicial
 
 @app.route('/gerar', methods=['POST'])
 def gerar_laudo():
-    # Aqui você pode pegar os dados do formulário
+    # Coleta de dados do formulário
     paciente = request.form['paciente']
     produto = request.form['produto']
     dose = request.form['dose']
-    # Aqui você pode fazer o processamento para gerar o laudo ou retornar os dados
-    return f'Laudo gerado para {paciente}, produto: {produto}, dose: {dose} mg.'
+
+    # Renderiza o laudo em nova página
+    return render_template('laudo.html', paciente=paciente, produto=produto, dose=dose)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
