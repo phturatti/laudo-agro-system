@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Laudo Agro 2025</title>
+    <meta charset="UTF-8">
+    <title>Laudo Agro 2025</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <h1>Bem-vindo ao sistema Laudo Agro 2025</h1>
-  <p>Esse sistema gera laudos técnicos agronômicos com base na sua receita médica.</p>
+    <h1>Bem-vindo ao sistema Laudo Agro 2025</h1>
+    <form action="/gerar" method="post">
+        <label for="paciente">Nome do paciente:</label>
+        <input type="text" name="paciente" required><br><br>
+
+        <label for="produto">Produto prescrito:</label>
+        <input type="text" name="produto" required><br><br>
+
+        <label for="dose">Dose diária (mg):</label>
+        <input type="number" name="dose" required><br><br>
+
+        <button type="submit">Gerar Laudo</button>
+    </form>
 </body>
 </html>
-<form action="/gerar" method="post">
-   <label>Nome do paciente:</label><br>
-   <input type="text" name="paciente" required><br><br>
-
-   <label>Produto prescrito:</label><br>
-   <input type="text" name="produto" required><br><br>
-
-   <label>Dose diária (mg):</label><br>
-   <input type="number" name="dose" required><br><br>
-
-   <button type="submit">Gerar Laudo</button>
-</form>
