@@ -9,3 +9,15 @@
   <p>Esse sistema gera laudos técnicos agronômicos com base na sua receita médica.</p>
 </body>
 </html>
+<form action="/gerar" method="post">
+   <label>Nome do paciente:</label><br>
+   <input type="text" name="paciente" required><br><br>
+
+   <label>Produto prescrito:</label><br>
+   <input type="text" name="produto" required><br><br>
+
+   <label>Dose diária (mg):</label><br>
+   <input type="number" name="dose" required><br><br>
+
+   <button type="submit">Gerar Laudo</button>
+</form>
