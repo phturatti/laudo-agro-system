@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Laudo Gerado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Laudo Agronômico Gerado</h1>
-    <p><strong>Paciente:</strong> {{ paciente }}</p>
-    <p><strong>Produto Prescrito:</strong> {{ produto }}</p>
-    <p><strong>Dose Diária:</strong> {{ dose }} mg/dia</p>
-    <br>
-    <a href="/">← Voltar</a>
+    <div class="laudo-container">
+        <h1>Laudo Agronômico Gerado</h1>
+        <p><strong>Paciente:</strong> {{ paciente }}</p>
+        <p><strong>Produto Prescrito:</strong> {{ produto }}</p>
+        <p><strong>Dose Diária:</strong> {{ dose }} mg/dia</p>
+        <br>
+        <a href="/">← Voltar</a>
+    </div>
 </body>
 </html>
